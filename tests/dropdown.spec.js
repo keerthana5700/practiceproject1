@@ -14,7 +14,7 @@ test('validate dropdown',async({page}) => {
     await singledrop.selectOption({value:"1"})
     await singledrop.selectOption({label:"Mango"})
     const text = await singledrop.locator('option:checked').textContent()
-    console.log("selected fruit:",text)
+    console.log("selected:",text)
     
     const multidrop = await page.locator('//select[@id="superheros"]')
     await multidrop.selectOption([{value:"aq"},{index:2},{label:"Elektra"}])
