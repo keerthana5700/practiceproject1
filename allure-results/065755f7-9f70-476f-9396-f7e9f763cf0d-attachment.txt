@@ -1,0 +1,2 @@
+selected fruit: Mango
+selected superHeros: [ 'Aquaman', 'The Avengers', 'Elektra' ]

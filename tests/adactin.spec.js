@@ -1,6 +1,6 @@
 import{test} from '@playwright/test'
 import { LoginPage } from '../page/LoginPage'
-import { SearchHotelPage } from '../page/SearchHotel.Pagejs'
+// import { SearchHotelPage } from '../page/SearchHotel.Pagejs'
 test('page object model',async({page})=>{
     const login = new LoginPage(page)
 await login.LaunchUrl()

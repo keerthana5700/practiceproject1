@@ -1,5 +1,8 @@
 
 //Alert HandlingS
+// multiple alert --> await page.on('dialog',async({dialog})=>{
+    // })
+
 import { test } from '@playwright/test'
 
 test('Alert Handling', async ({ page }) => {

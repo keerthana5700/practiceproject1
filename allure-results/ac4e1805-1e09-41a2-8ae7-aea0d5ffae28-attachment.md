@@ -1,0 +1,1598 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: windowhandling.spec.js >> Window Handling
+- Location: tests\windowhandling.spec.js:3:5
+
+# Error details
+
+```
+Error: page.click: SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//h2[contains(@aria-label,"Sponsored Ad - iPhone Air 256 GB: Thinnest iPhone Ever, 16.63 cm (6.5″)")]S' is not a valid XPath expression.
+    at Object.queryAll (<anonymous>:6017:25)
+    at InjectedScript._queryEngineAll (<anonymous>:6730:49)
+    at InjectedScript.querySelectorAll (<anonymous>:6717:30)
+    at eval (eval at evaluate (:302:30), <anonymous>:2:39)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+Call log:
+  - waiting for locator('//h2[contains(@aria-label,"Sponsored Ad - iPhone Air 256 GB: Thinnest iPhone Ever, 16.63 cm (6.5″)")]S')
+    - waiting for" https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=iphone+17+pro" navigation to finish...
+    - navigated to "https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=iphone+17+pro"
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation "Shortcuts menu" [ref=e3]:
+    - heading "Skip to" [level=2] [ref=e4]
+    - list "Skip to" [ref=e5]:
+      - listitem [ref=e6]:
+        - link "main content" [ref=e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+      - listitem [ref=e8]:
+        - link "Results" [ref=e9] [cursor=pointer]:
+          - /url: .s-asin a:has(h2)
+    - separator [ref=e10]
+    - heading "Keyboard shortcuts" [level=2] [ref=e11]
+    - list "Keyboard shortcuts" [ref=e12]:
+      - listitem [ref=e13]:
+        - link "Search, alt, forward slash" [ref=e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e15]:
+            - generic [ref=e16]: Search
+            - generic [ref=e17]:
+              - generic [ref=e18]: alt
+              - generic [ref=e19]: +
+              - generic [ref=e20]: /
+      - listitem [ref=e21]:
+        - link "Cart, shift, alt, c" [ref=e22] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e23]:
+            - generic [ref=e24]: Cart
+            - generic [ref=e25]:
+              - generic [ref=e26]: shift
+              - generic [ref=e27]: +
+              - generic [ref=e28]: alt
+              - generic [ref=e29]: +
+              - generic [ref=e30]: C
+      - listitem [ref=e31]:
+        - link "Home, shift, alt, h" [ref=e32] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e33]:
+            - generic [ref=e34]: Home
+            - generic [ref=e35]:
+              - generic [ref=e36]: shift
+              - generic [ref=e37]: +
+              - generic [ref=e38]: alt
+              - generic [ref=e39]: +
+              - generic [ref=e40]: H
+      - listitem [ref=e41]:
+        - link "Your orders, shift, alt, o" [ref=e42] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e43]:
+            - generic [ref=e44]: Orders
+            - generic [ref=e45]:
+              - generic [ref=e46]: shift
+              - generic [ref=e47]: +
+              - generic [ref=e48]: alt
+              - generic [ref=e49]: +
+              - generic [ref=e50]: O
+      - listitem [ref=e51]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: Show/Hide shortcuts
+            - generic [ref=e55]:
+              - generic [ref=e56]: shift
+              - generic [ref=e57]: +
+              - generic [ref=e58]: alt
+              - generic [ref=e59]: +
+              - generic [ref=e60]: Z
+    - generic [ref=e66]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=e67]:
+    - navigation "Primary" [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - link "Amazon.in" [ref=e72] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .in
+          - button "Delivering to Chennai 600009 Update location" [ref=e75] [cursor=pointer]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Delivering to Chennai 600009
+              - generic [ref=e79]: Update location
+        - search [ref=e82]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: All
+            - combobox "Select the department you want to search in" [ref=e89] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Devices"
+              - option "Amazon Fashion"
+              - option "Amazon Fresh"
+              - option "Amazon Fresh Meat"
+              - option "Amazon Pharmacy"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Audible Audiobooks"
+              - option "Baby"
+              - option "Beauty"
+              - option "Books"
+              - option "Car & Motorbike"
+              - option "Clothing & Accessories"
+              - option "Collectibles"
+              - option "Computers & Accessories"
+              - option "Deals"
+              - option "Electronics"
+              - option "Furniture"
+              - option "Garden & Outdoors"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Foods"
+              - option "Health & Personal Care"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Jewellery"
+              - option "Kindle Store"
+              - option "Luggage & Bags"
+              - option "Luxury Beauty"
+              - option "Movies & TV Shows"
+              - option "MP3 Music"
+              - option "Music"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Prime Video"
+              - option "Shoes & Handbags"
+              - option "Software"
+              - option "Sports, Fitness & Outdoors"
+              - option "Subscribe & Save"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under ₹500"
+              - option "Video Games"
+              - option "Watches"
+          - searchbox "Search Amazon.in" [ref=e92]: iphone air
+          - generic "Go" [ref=e95] [cursor=pointer]:
+            - button "Go" [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Choose a language for shopping in Amazon India. The current selection is English (EN)." [ref=e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e103]:
+                - img "India" [ref=e104]
+                - generic [ref=e105]: EN
+            - button "Expand to Change Language or Country" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link "Hello, sign in Account & Lists" [ref=e108] [cursor=pointer]:
+              - /url: https://www.amazon.in/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fs%3Fk%3Diphone%2Bair%26ref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+              - generic [ref=e110]: Hello, sign in
+              - generic [ref=e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e114]: Returns
+            - generic [ref=e115]: "& Orders"
+          - link "0 items in cart" [ref=e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e118]: "0"
+            - generic [ref=e121]: Cart
+      - generic [ref=e122]:
+        - button "Open All Categories Menu" [ref=e124] [cursor=pointer]:
+          - generic [ref=e126]: All
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - generic [ref=e132]:
+              - link "Fresh" [ref=e133] [cursor=pointer]:
+                - /url: /fresh?ref_=nav_cs_grocery
+              - button "Fresh Details" [ref=e134] [cursor=pointer]
+          - listitem [ref=e135]:
+            - link "Prime Video" [ref=e137] [cursor=pointer]:
+              - /url: https://www.primevideo.com/offers/nonprimehomepage/ref_=nav_dvm_crs_in_s_gw_bt_dk_p_hamburgr?ref_=avod_desktop_topnav
+          - listitem [ref=e138]:
+            - link "Sell" [ref=e140] [cursor=pointer]:
+              - /url: /b/32702023031?node=32702023031&ld=AZINSOANavDesktop_T3&ref_=nav_cs_sell_T3
+          - listitem [ref=e141]:
+            - link "Bestsellers" [ref=e143] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e144]:
+            - link "Today's Deals" [ref=e146] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e147]:
+            - link "Mobiles" [ref=e149] [cursor=pointer]:
+              - /url: /mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles
+          - listitem [ref=e150]:
+            - link "New Releases" [ref=e152] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e153]:
+            - generic [ref=e154]:
+              - link "Prime" [ref=e155] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=e156] [cursor=pointer]
+          - listitem [ref=e157]:
+            - link "Amazon Pay" [ref=e159] [cursor=pointer]:
+              - /url: /gp/sva/dashboard?ref_=nav_cs_apay
+          - listitem [ref=e160]:
+            - link "Electronics" [ref=e162] [cursor=pointer]:
+              - /url: /electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics
+          - listitem [ref=e163]:
+            - link "Customer Service" [ref=e165] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help
+          - listitem [ref=e166]:
+            - link "Home & Kitchen" [ref=e168] [cursor=pointer]:
+              - /url: /Home-Kitchen/b/?ie=UTF8&node=976442031&ref_=nav_cs_home
+          - listitem [ref=e169]:
+            - link "Fashion" [ref=e171] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6648217031&ref_=nav_cs_fashion
+          - listitem [ref=e172]:
+            - link "Computers" [ref=e174] [cursor=pointer]:
+              - /url: /computers-and-accessories/b/?ie=UTF8&node=976392031&ref_=nav_cs_pc
+          - listitem [ref=e175]:
+            - link "Toys & Games" [ref=e177] [cursor=pointer]:
+              - /url: /Toys-Games/b/?ie=UTF8&node=1350380031&ref_=nav_cs_toys
+          - listitem [ref=e178]:
+            - link "Car & Motorbike" [ref=e180] [cursor=pointer]:
+              - /url: /Car-Motorbike-Store/b/?ie=UTF8&node=4772060031&ref_=nav_cs_automotive
+          - listitem [ref=e181]:
+            - link "Sports, Fitness & Outdoors" [ref=e183] [cursor=pointer]:
+              - /url: /Sports/b/?ie=UTF8&node=1984443031&ref_=nav_cs_sports
+          - listitem [ref=e184]:
+            - link "Home Improvement" [ref=e186] [cursor=pointer]:
+              - /url: /Home-Improvement/b/?ie=UTF8&node=4286640031&ref_=nav_cs_hi
+          - listitem [ref=e187]:
+            - link "Pet Supplies" [ref=e189] [cursor=pointer]:
+              - /url: /Pet-Supplies/b/?ie=UTF8&node=2454181031&ref_=nav_cs_pets
+          - listitem [ref=e190]:
+            - link "Gift Cards" [ref=e192] [cursor=pointer]:
+              - /url: /gift-card-store/b/?ie=UTF8&node=3704982031&ref_=nav_cs_gc
+          - listitem [ref=e193]:
+            - link "Beauty & Personal Care" [ref=e195] [cursor=pointer]:
+              - /url: /beauty/b/?ie=UTF8&node=1355016031&ref_=nav_cs_beauty
+          - listitem [ref=e196]:
+            - link "Video Games" [ref=e198] [cursor=pointer]:
+              - /url: /video-games/b/?ie=UTF8&node=976460031&ref_=nav_cs_video_games
+          - listitem [ref=e199]:
+            - link "Grocery & Gourmet Foods" [ref=e201] [cursor=pointer]:
+              - /url: /Gourmet-Specialty-Foods/b/?ie=UTF8&node=2454178031&ref_=nav_cs_grocery
+          - listitem [ref=e202]:
+            - link "Baby" [ref=e204] [cursor=pointer]:
+              - /url: /Baby/b/?ie=UTF8&node=1571274031&ref_=nav_cs_baby
+          - listitem [ref=e205]:
+            - link "Custom Products" [ref=e207] [cursor=pointer]:
+              - /url: /Amazon-Custom/b/?ie=UTF8&node=32615889031&ref_=nav_cs_custom
+          - listitem [ref=e208]:
+            - link "Health, Household & Personal Care" [ref=e210] [cursor=pointer]:
+              - /url: /health-and-personal-care/b/?ie=UTF8&node=1350384031&ref_=nav_cs_hpc
+          - listitem [ref=e211]:
+            - link "AmazonBasics" [ref=e213] [cursor=pointer]:
+              - /url: /b/?node=6637738031&ref_=nav_cs_amazonbasics
+          - listitem [ref=e214]:
+            - link "Audible" [ref=e216] [cursor=pointer]:
+              - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=17941593031&ref_=nav_cs_audible
+          - listitem [ref=e217]:
+            - link "Subscribe & Save" [ref=e219] [cursor=pointer]:
+              - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+          - listitem [ref=e220]:
+            - link "Kindle eBooks" [ref=e222] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=1634753031&ref_=nav_cs_kindle_books
+          - listitem [ref=e223]:
+            - link "Books" [ref=e225] [cursor=pointer]:
+              - /url: /Books/b/?ie=UTF8&node=976389031&ref_=nav_cs_books
+          - listitem [ref=e226]:
+            - link "Flights" [ref=e228] [cursor=pointer]:
+              - /url: /flights?ref_=nav_cs_apay_desktop_topnav_flights
+        - link [ref=e232] [cursor=pointer]:
+          - /url: /gp/video/ssoredirect/?ie=UTF8&pvp=%2F%3Fref_%3Ddvm_crs_in_s_gw_swm_dk_np_masofuni&ref_=nav_swm_dvm_crs_in_s_gw_swm_dk_np_masofuni&pf_rd_p=2ad9420b-38da-4fa3-bf6f-d362af288285&pf_rd_s=nav-sitewide-msg&pf_rd_t=4201&pf_rd_i=navbar-4201&pf_rd_m=A21TJRUUN4KGV&pf_rd_r=F79TTHQY7KFEKF1S3DPZ
+      - dialog [ref=e233]
+  - generic [ref=e235]:
+    - heading "1-16 of over 30,000 results for \"iphone air\" Featured" [level=1] [ref=e238]:
+      - generic [ref=e239]:
+        - heading "1-16 of over 30,000 results for \"iphone air\"" [level=2] [ref=e244]
+        - generic [ref=e249]:
+          - generic [ref=e250]: "Sort by:"
+          - combobox "Sort by:" [ref=e251]:
+            - option "Featured" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - option "Avg. Customer Review"
+            - option "Newest Arrivals"
+            - option "Best Sellers"
+          - generic [ref=e254] [cursor=pointer]: Sort by:Featured
+    - generic [ref=e256]:
+      - generic [ref=e258]:
+        - generic [ref=e260]:
+          - generic [ref=e262]:
+            - generic [ref=e265]:
+              - heading "Results" [level=2] [ref=e266]
+              - generic [ref=e267]: Check each product page for other buying options.
+            - generic:
+              - list:
+                - listitem [ref=e268]:
+                  - generic [ref=e276]:
+                    - generic [ref=e278]:
+                      - generic "Amazon's Choice" [ref=e281]:
+                        - group "Amazon's Choice for \"iphone air\"" [ref=e284]:
+                          - generic [ref=e286]: Amazon's Choice
+                      - link [ref=e290] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMTkzMjo6MDo6&url=%2FiPhone-Air-512-GB-Promotion%2Fdp%2FB0FQFJG6WN%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-1-spons%26aref%3DErUPFYy3P8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=ErUPFYy3P8&sp_cr=ZAZ
+                        - img [ref=e292]
+                    - generic [ref=e295]:
+                      - generic [ref=e296]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e299] [cursor=pointer]:
+                          - generic [ref=e300]: Sponsored
+                        - heading "Apple" [level=2] [ref=e304]
+                        - 'link "Sponsored Ad - iPhone Air 512 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Cloud White" [ref=e305] [cursor=pointer]':
+                          - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMTkzMjo6MDo6&url=%2FiPhone-Air-512-GB-Promotion%2Fdp%2FB0FQFJG6WN%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-1-spons%26aref%3DErUPFYy3P8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=ErUPFYy3P8&sp_cr=ZAZ
+                          - 'heading "Sponsored Ad - iPhone Air 512 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Cloud White" [level=2] [ref=e306]': "iPhone Air 512 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Cloud White"
+                      - generic [ref=e308]:
+                        - text: "4.5"
+                        - button "4.5 out of 5 stars, rating details" [ref=e310] [cursor=pointer]:
+                          - generic [ref=e312]: 4.5 out of 5 stars
+                        - link "6 ratings" [ref=e314] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMTkzMjo6MDo6&url=%2FiPhone-Air-512-GB-Promotion%2Fdp%2FB0FQFJG6WN%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-1-spons%26aref%3DErUPFYy3P8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=ErUPFYy3P8&sp_cr=ZAZ#customerReviews
+                          - text: (6)
+                      - generic [ref=e317]:
+                        - generic [ref=e318]:
+                          - generic [ref=e320]:
+                            - generic [ref=e321]: Price, product page
+                            - 'link "₹1,21,900 M.R.P: ₹1,39,900 M.R.P: ₹1,39,900" [ref=e322] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMTkzMjo6MDo6&url=%2FiPhone-Air-512-GB-Promotion%2Fdp%2FB0FQFJG6WN%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-1-spons%26aref%3DErUPFYy3P8%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=ErUPFYy3P8&sp_cr=ZAZ
+                              - generic [ref=e323]:
+                                - generic [ref=e324]: ₹1,21,900
+                                - generic [ref=e325]: ₹1,21,900
+                              - generic [ref=e326]: "M.R.P: ₹1,39,900"
+                              - generic [ref=e327]:
+                                - text: "M.R.P:"
+                                - generic [ref=e328]:
+                                  - generic [ref=e329]: ₹1,39,900
+                                  - text: ₹1,39,900
+                            - text: (13% off)
+                          - generic [ref=e333]:
+                            - generic [ref=e334]: Save extra with No Cost EMI
+                            - generic [ref=e335]: Save extra with No Cost EMI
+                        - generic [ref=e338]:
+                          - generic [ref=e340]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e342]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e357] [cursor=pointer]
+                - listitem [ref=e360]:
+                  - generic [ref=e368]:
+                    - link [ref=e374] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMjUzMjo6MDo6&url=%2FiPhone-Air-TB-Thinnest-Promotion%2Fdp%2FB0FQG1TPG9%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-2-spons%26aref%3DrSM0kVIOtr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=rSM0kVIOtr&sp_cr=ZAZ
+                      - img [ref=e376]
+                    - generic [ref=e379]:
+                      - generic [ref=e380]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e383] [cursor=pointer]:
+                          - generic [ref=e384]: Sponsored
+                        - heading "Apple" [level=2] [ref=e388]
+                        - 'link "Sponsored Ad - iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Sky Blue" [active] [ref=e389] [cursor=pointer]':
+                          - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMjUzMjo6MDo6&url=%2FiPhone-Air-TB-Thinnest-Promotion%2Fdp%2FB0FQG1TPG9%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-2-spons%26aref%3DrSM0kVIOtr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=rSM0kVIOtr&sp_cr=ZAZ
+                          - 'heading "Sponsored Ad - iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Sky Blue" [level=2] [ref=e390]': "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Sky Blue"
+                      - generic [ref=e392]:
+                        - text: "3.8"
+                        - button "3.8 out of 5 stars, rating details" [ref=e394] [cursor=pointer]:
+                          - generic [ref=e396]: 3.8 out of 5 stars
+                        - link "6 ratings" [ref=e398] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMjUzMjo6MDo6&url=%2FiPhone-Air-TB-Thinnest-Promotion%2Fdp%2FB0FQG1TPG9%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-2-spons%26aref%3DrSM0kVIOtr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=rSM0kVIOtr&sp_cr=ZAZ#customerReviews
+                          - text: (6)
+                      - generic [ref=e401]:
+                        - generic [ref=e402]:
+                          - generic [ref=e404]:
+                            - generic [ref=e405]: Price, product page
+                            - 'link "₹1,41,900 M.R.P: ₹1,59,900 M.R.P: ₹1,59,900" [ref=e406] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo1MTQ0NTc0MDg5NjUxMTU5OjE3ODQ3MTcxNTg6c3BfYXRmOjMwMDcxNDEyOTAyMjUzMjo6MDo6&url=%2FiPhone-Air-TB-Thinnest-Promotion%2Fdp%2FB0FQG1TPG9%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o%26dib_tag%3Dse%26keywords%3Diphone%2Bair%26qid%3D1784717158%26sr%3D8-2-spons%26aref%3DrSM0kVIOtr%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=rSM0kVIOtr&sp_cr=ZAZ
+                              - generic [ref=e407]:
+                                - generic [ref=e408]: ₹1,41,900
+                                - generic [ref=e409]: ₹1,41,900
+                              - generic [ref=e410]: "M.R.P: ₹1,59,900"
+                              - generic [ref=e411]:
+                                - text: "M.R.P:"
+                                - generic [ref=e412]:
+                                  - generic [ref=e413]: ₹1,59,900
+                                  - text: ₹1,59,900
+                            - text: (11% off)
+                          - generic [ref=e417]:
+                            - generic [ref=e418]: Save extra with No Cost EMI
+                            - generic [ref=e419]: Save extra with No Cost EMI
+                        - generic [ref=e422]:
+                          - generic [ref=e424]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e426]: Or fastest delivery Tomorrow, 23 Jul
+                        - button "Add to cart" [ref=e441] [cursor=pointer]
+                - listitem [ref=e444]:
+                  - generic [ref=e450]:
+                    - generic [ref=e452]:
+                      - generic "Amazon's Choice" [ref=e455]:
+                        - group "Amazon's Choice for \"iphone air\"" [ref=e458]:
+                          - generic [ref=e460]: Amazon's Choice
+                      - link [ref=e464] [cursor=pointer]:
+                        - /url: /iPhone-Air-512-GB-Promotion/dp/B0FQFJG6WN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-3
+                        - img [ref=e466]
+                    - generic [ref=e469]:
+                      - generic [ref=e470]:
+                        - heading "Apple" [level=2] [ref=e473]
+                        - 'link "iPhone Air 512 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Cloud White" [ref=e474] [cursor=pointer]':
+                          - /url: /iPhone-Air-512-GB-Promotion/dp/B0FQFJG6WN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-3
+                          - 'heading "iPhone Air 512 GB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Cloud White" [level=2] [ref=e475]'
+                      - generic [ref=e477]:
+                        - text: "4.5"
+                        - button "4.5 out of 5 stars, rating details" [ref=e479] [cursor=pointer]:
+                          - generic [ref=e481]: 4.5 out of 5 stars
+                        - link "6 ratings" [ref=e483] [cursor=pointer]:
+                          - /url: /iPhone-Air-512-GB-Promotion/dp/B0FQFJG6WN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-3#customerReviews
+                          - text: (6)
+                      - generic [ref=e486]:
+                        - generic [ref=e487]:
+                          - generic [ref=e489]:
+                            - generic [ref=e490]: Price, product page
+                            - 'link "₹1,21,900 M.R.P: ₹1,39,900 M.R.P: ₹1,39,900" [ref=e491] [cursor=pointer]':
+                              - /url: /iPhone-Air-512-GB-Promotion/dp/B0FQFJG6WN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-3
+                              - generic [ref=e492]:
+                                - generic [ref=e493]: ₹1,21,900
+                                - generic [ref=e494]: ₹1,21,900
+                              - generic [ref=e495]: "M.R.P: ₹1,39,900"
+                              - generic [ref=e496]:
+                                - text: "M.R.P:"
+                                - generic [ref=e497]:
+                                  - generic [ref=e498]: ₹1,39,900
+                                  - text: ₹1,39,900
+                            - text: (13% off)
+                          - generic [ref=e502]:
+                            - generic [ref=e503]: Save extra with No Cost EMI
+                            - generic [ref=e504]: Save extra with No Cost EMI
+                        - generic [ref=e507]:
+                          - generic [ref=e509]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e511]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e526] [cursor=pointer]
+                - listitem [ref=e529]:
+                  - generic [ref=e535]:
+                    - link [ref=e541] [cursor=pointer]:
+                      - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQH1DBS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4
+                      - img [ref=e543]
+                    - generic [ref=e546]:
+                      - generic [ref=e547]:
+                        - heading "Apple" [level=2] [ref=e550]
+                        - 'link "iPhone 16e 128 GB: Built for Apple Intelligence, A18 Chip, Supersized Battery Life, 48MP Fusion. Camera, 15.40 cm (6.1″) Super Retina XDR Display; Black" [ref=e551] [cursor=pointer]':
+                          - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQH1DBS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4
+                          - 'heading "iPhone 16e 128 GB: Built for Apple Intelligence, A18 Chip, Supersized Battery Life, 48MP Fusion. Camera, 15.40 cm (6.1″) Super Retina XDR Display; Black" [level=2] [ref=e552]'
+                      - generic [ref=e553]:
+                        - generic [ref=e554]:
+                          - text: "4.5"
+                          - button "4.5 out of 5 stars, rating details" [ref=e556] [cursor=pointer]:
+                            - generic [ref=e558]: 4.5 out of 5 stars
+                          - link "1,236 ratings" [ref=e560] [cursor=pointer]:
+                            - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQH1DBS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4#customerReviews
+                            - text: (1.2K)
+                        - generic [ref=e561]: 100+ bought in past month
+                      - generic [ref=e564]:
+                        - generic [ref=e565]:
+                          - generic [ref=e567]:
+                            - generic [ref=e568]: Price, product page
+                            - link "₹59,900" [ref=e569] [cursor=pointer]:
+                              - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQH1DBS/ref=sr_1_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4
+                              - generic [ref=e570]:
+                                - generic [ref=e571]: ₹59,900
+                                - generic [ref=e572]: ₹59,900
+                          - generic [ref=e576]:
+                            - generic [ref=e577]: Save extra with No Cost EMI
+                            - generic [ref=e578]: Save extra with No Cost EMI
+                        - generic [ref=e583]: FREE delivery Mon, 27 Jul
+                        - button "Add to cart" [ref=e598] [cursor=pointer]
+                        - group "colours available" [ref=e600]:
+                          - list [ref=e601]:
+                            - generic [ref=e602]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQH1DBS/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4
+                            - generic [ref=e605]:
+                              - listitem:
+                                - link "White":
+                                  - /url: /iPhone-16e-128-Intelligence-Supersized/dp/B0DXQHMRCP/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-4
+                - listitem [ref=e610]:
+                  - generic [ref=e616]:
+                    - link [ref=e622] [cursor=pointer]:
+                      - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1K1FM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-5
+                      - img [ref=e624]
+                    - generic [ref=e627]:
+                      - generic [ref=e628]:
+                        - heading "Apple" [level=2] [ref=e631]
+                        - 'link "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Light Gold" [ref=e632] [cursor=pointer]':
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1K1FM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-5
+                          - 'heading "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Light Gold" [level=2] [ref=e633]'
+                      - generic [ref=e635]:
+                        - text: "3.5"
+                        - button "3.5 out of 5 stars, rating details" [ref=e637] [cursor=pointer]:
+                          - generic [ref=e639]: 3.5 out of 5 stars
+                        - link "3 ratings" [ref=e641] [cursor=pointer]:
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1K1FM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-5#customerReviews
+                          - text: (3)
+                      - generic [ref=e644]:
+                        - generic [ref=e645]:
+                          - generic [ref=e647]:
+                            - generic [ref=e648]: Price, product page
+                            - 'link "₹1,41,900 M.R.P: ₹1,59,900 M.R.P: ₹1,59,900" [ref=e649] [cursor=pointer]':
+                              - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1K1FM/ref=sr_1_5?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-5
+                              - generic [ref=e650]:
+                                - generic [ref=e651]: ₹1,41,900
+                                - generic [ref=e652]: ₹1,41,900
+                              - generic [ref=e653]: "M.R.P: ₹1,59,900"
+                              - generic [ref=e654]:
+                                - text: "M.R.P:"
+                                - generic [ref=e655]:
+                                  - generic [ref=e656]: ₹1,59,900
+                                  - text: ₹1,59,900
+                            - text: (11% off)
+                          - generic [ref=e660]:
+                            - generic [ref=e661]: Save extra with No Cost EMI
+                            - generic [ref=e662]: Save extra with No Cost EMI
+                        - generic [ref=e663]:
+                          - generic [ref=e667]: FREE delivery Tue, 28 Jul
+                          - generic "Only 1 left in stock." [ref=e669]
+                        - button "Add to cart" [ref=e684] [cursor=pointer]
+                - listitem [ref=e687]:
+                  - generic [ref=e693]:
+                    - link [ref=e699] [cursor=pointer]:
+                      - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1TPG9/ref=sr_1_6?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-6
+                      - img [ref=e701]
+                    - generic [ref=e704]:
+                      - generic [ref=e705]:
+                        - heading "Apple" [level=2] [ref=e708]
+                        - 'link "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Sky Blue" [ref=e709] [cursor=pointer]':
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1TPG9/ref=sr_1_6?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-6
+                          - 'heading "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Sky Blue" [level=2] [ref=e710]'
+                      - generic [ref=e712]:
+                        - text: "3.8"
+                        - button "3.8 out of 5 stars, rating details" [ref=e714] [cursor=pointer]:
+                          - generic [ref=e716]: 3.8 out of 5 stars
+                        - link "6 ratings" [ref=e718] [cursor=pointer]:
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1TPG9/ref=sr_1_6?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-6#customerReviews
+                          - text: (6)
+                      - generic [ref=e721]:
+                        - generic [ref=e722]:
+                          - generic [ref=e724]:
+                            - generic [ref=e725]: Price, product page
+                            - 'link "₹1,41,900 M.R.P: ₹1,59,900 M.R.P: ₹1,59,900" [ref=e726] [cursor=pointer]':
+                              - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG1TPG9/ref=sr_1_6?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-6
+                              - generic [ref=e727]:
+                                - generic [ref=e728]: ₹1,41,900
+                                - generic [ref=e729]: ₹1,41,900
+                              - generic [ref=e730]: "M.R.P: ₹1,59,900"
+                              - generic [ref=e731]:
+                                - text: "M.R.P:"
+                                - generic [ref=e732]:
+                                  - generic [ref=e733]: ₹1,59,900
+                                  - text: ₹1,59,900
+                            - text: (11% off)
+                          - generic [ref=e737]:
+                            - generic [ref=e738]: Save extra with No Cost EMI
+                            - generic [ref=e739]: Save extra with No Cost EMI
+                        - generic [ref=e742]:
+                          - generic [ref=e744]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e746]: Or fastest delivery Tomorrow, 23 Jul
+                        - button "Add to cart" [ref=e761] [cursor=pointer]
+                - listitem [ref=e764]:
+                  - generic [ref=e770]:
+                    - link [ref=e776] [cursor=pointer]:
+                      - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5T1PF/ref=sr_1_7?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                      - img [ref=e778]
+                    - generic [ref=e781]:
+                      - generic [ref=e782]:
+                        - heading "Samsung" [level=2] [ref=e785]
+                        - link "Galaxy Z Fold7 5G Mobile with Galaxy AI (Silver Shadow, 12GB RAM, 256GB Storage), Ultra Sleek Design with 200MP Camera, Ultra-Smooth Gaming with Powerful Snapdragon 8 Elite, Google Gemini" [ref=e786] [cursor=pointer]:
+                          - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5T1PF/ref=sr_1_7?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                          - heading "Galaxy Z Fold7 5G Mobile with Galaxy AI (Silver Shadow, 12GB RAM, 256GB Storage), Ultra Sleek Design with 200MP Camera, Ultra-Smooth Gaming with Powerful Snapdragon 8 Elite, Google Gemini" [level=2] [ref=e787]
+                      - generic [ref=e788]:
+                        - generic [ref=e789]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e791] [cursor=pointer]:
+                            - generic [ref=e793]: 4.3 out of 5 stars
+                          - link "92 ratings" [ref=e795] [cursor=pointer]:
+                            - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5T1PF/ref=sr_1_7?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7#customerReviews
+                            - text: (92)
+                        - generic [ref=e796]: 50+ bought in past month
+                      - generic [ref=e799]:
+                        - generic [ref=e800]:
+                          - generic [ref=e802]:
+                            - generic [ref=e803]: Price, product page
+                            - link "₹1,74,999" [ref=e804] [cursor=pointer]:
+                              - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5T1PF/ref=sr_1_7?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                              - generic [ref=e805]:
+                                - generic [ref=e806]: ₹1,74,999
+                                - generic [ref=e807]: ₹1,74,999
+                          - generic [ref=e811]:
+                            - generic [ref=e812]: Save extra with No Cost EMI
+                            - generic [ref=e813]: Save extra with No Cost EMI
+                        - generic [ref=e816]:
+                          - generic [ref=e818]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e820]: Or fastest delivery Tomorrow 6 am - 10 am
+                        - button "Add to cart" [ref=e835] [cursor=pointer]
+                        - group "colours available" [ref=e837]:
+                          - list [ref=e838]:
+                            - generic [ref=e839]:
+                              - listitem:
+                                - link "Silver Shadow":
+                                  - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5T1PF/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                            - generic [ref=e842]:
+                              - listitem:
+                                - link "JetBlack":
+                                  - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0FDL5K6SV/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                            - generic [ref=e845]:
+                              - listitem:
+                                - link "Blue Shadow":
+                                  - /url: /Samsung-Smartphone-Storage-Powerful-Snapdragon/dp/B0H14RPRWR/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-7
+                - listitem [ref=e850]:
+                  - generic [ref=e856]:
+                    - link [ref=e862] [cursor=pointer]:
+                      - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BF2X2/ref=sr_1_8?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                      - img [ref=e864]
+                    - generic [ref=e867]:
+                      - generic [ref=e868]:
+                        - heading "Samsung" [level=2] [ref=e871]
+                        - link "Galaxy S26 5G (Black, 12GB RAM, 256GB Storage), AI Phone, Photo Assist, Creative Studio, 50MP Camera with ProVisual Engine, Powerful Customized Processor and 4300mAh Battery" [ref=e872] [cursor=pointer]:
+                          - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BF2X2/ref=sr_1_8?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                          - heading "Galaxy S26 5G (Black, 12GB RAM, 256GB Storage), AI Phone, Photo Assist, Creative Studio, 50MP Camera with ProVisual Engine, Powerful Customized Processor and 4300mAh Battery" [level=2] [ref=e873]
+                      - generic [ref=e874]:
+                        - generic [ref=e875]:
+                          - text: "4.4"
+                          - button "4.4 out of 5 stars, rating details" [ref=e877] [cursor=pointer]:
+                            - generic [ref=e879]: 4.4 out of 5 stars
+                          - link "199 ratings" [ref=e881] [cursor=pointer]:
+                            - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BF2X2/ref=sr_1_8?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8#customerReviews
+                            - text: (199)
+                        - generic [ref=e882]: 50+ bought in past month
+                      - generic [ref=e885]:
+                        - generic [ref=e886]:
+                          - generic [ref=e888]:
+                            - generic [ref=e889]: Price, product page
+                            - link "₹87,999" [ref=e890] [cursor=pointer]:
+                              - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BF2X2/ref=sr_1_8?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                              - generic [ref=e891]:
+                                - generic [ref=e892]: ₹87,999
+                                - generic [ref=e893]: ₹87,999
+                          - generic [ref=e897]:
+                            - generic [ref=e898]: Flat INR 4000 Off on HDFC BankCards
+                            - generic [ref=e899]: Flat INR 4000 Off on HDFC BankCar...
+                        - generic [ref=e902]:
+                          - generic [ref=e904]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e906]: Or fastest delivery Tomorrow 6 am - 10 am
+                        - button "Add to cart" [ref=e921] [cursor=pointer]
+                        - group "colours available" [ref=e923]:
+                          - list [ref=e924]:
+                            - generic [ref=e925]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BF2X2/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                            - generic [ref=e928]:
+                              - listitem:
+                                - link "Cobalt Violet":
+                                  - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL873FSD/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                            - generic [ref=e931]:
+                              - listitem:
+                                - link "Sky Blue":
+                                  - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8LDFF4/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                            - generic [ref=e934]:
+                              - listitem:
+                                - link "White":
+                                  - /url: /Samsung-Creative-ProVisual-Customized-Processor/dp/B0GL8BYCVM/ref=cs_sr_dp_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-8
+                - listitem [ref=e939]:
+                  - generic [ref=e945]:
+                    - link [ref=e951] [cursor=pointer]:
+                      - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG8WM6R/ref=sr_1_9?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-9
+                      - img [ref=e953]
+                    - generic [ref=e956]:
+                      - generic [ref=e957]:
+                        - heading "Apple" [level=2] [ref=e960]
+                        - 'link "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Space Black" [ref=e961] [cursor=pointer]':
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG8WM6R/ref=sr_1_9?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-9
+                          - 'heading "iPhone Air 1 TB: Thinnest iPhone Ever, 16.63 cm (6.5″) Display with Promotion up to 120Hz, Powerful A19 Pro Chip, Center Stage Front Camera, All-Day Battery Life; Space Black" [level=2] [ref=e962]'
+                      - generic [ref=e964]:
+                        - text: "3.5"
+                        - button "3.5 out of 5 stars, rating details" [ref=e966] [cursor=pointer]:
+                          - generic [ref=e968]: 3.5 out of 5 stars
+                        - link "7 ratings" [ref=e970] [cursor=pointer]:
+                          - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG8WM6R/ref=sr_1_9?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-9#customerReviews
+                          - text: (7)
+                      - generic [ref=e973]:
+                        - generic [ref=e974]:
+                          - generic [ref=e976]:
+                            - generic [ref=e977]: Price, product page
+                            - 'link "₹1,41,900 M.R.P: ₹1,59,900 M.R.P: ₹1,59,900" [ref=e978] [cursor=pointer]':
+                              - /url: /iPhone-Air-TB-Thinnest-Promotion/dp/B0FQG8WM6R/ref=sr_1_9?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-9
+                              - generic [ref=e979]:
+                                - generic [ref=e980]: ₹1,41,900
+                                - generic [ref=e981]: ₹1,41,900
+                              - generic [ref=e982]: "M.R.P: ₹1,59,900"
+                              - generic [ref=e983]:
+                                - text: "M.R.P:"
+                                - generic [ref=e984]:
+                                  - generic [ref=e985]: ₹1,59,900
+                                  - text: ₹1,59,900
+                            - text: (11% off)
+                          - generic [ref=e989]:
+                            - generic [ref=e990]: Save extra with No Cost EMI
+                            - generic [ref=e991]: Save extra with No Cost EMI
+                        - generic [ref=e992]:
+                          - generic [ref=e996]: FREE delivery Mon, 27 Jul
+                          - generic "Only 1 left in stock." [ref=e998]
+                        - button "Add to cart" [ref=e1013] [cursor=pointer]
+                - listitem [ref=e1016]:
+                  - generic [ref=e1022]:
+                    - link [ref=e1028] [cursor=pointer]:
+                      - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DSKL9MQ8/ref=sr_1_10?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                      - img [ref=e1030]
+                    - generic [ref=e1033]:
+                      - generic [ref=e1034]:
+                        - heading "Samsung" [level=2] [ref=e1037]
+                        - link "Galaxy S25 Ultra 5G AI Smartphone (Titanium Whitesilver, 12GB RAM, 256GB Storage), 200MP Camera, S Pen Included, Long Battery Life" [ref=e1038] [cursor=pointer]:
+                          - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DSKL9MQ8/ref=sr_1_10?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                          - heading "Galaxy S25 Ultra 5G AI Smartphone (Titanium Whitesilver, 12GB RAM, 256GB Storage), 200MP Camera, S Pen Included, Long Battery Life" [level=2] [ref=e1039]
+                      - generic [ref=e1040]:
+                        - generic [ref=e1041]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e1043] [cursor=pointer]:
+                            - generic [ref=e1045]: 4.3 out of 5 stars
+                          - link "1,687 ratings" [ref=e1047] [cursor=pointer]:
+                            - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DSKL9MQ8/ref=sr_1_10?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10#customerReviews
+                            - text: (1.6K)
+                        - generic [ref=e1048]: 5K+ bought in past month
+                      - generic [ref=e1051]:
+                        - generic [ref=e1052]:
+                          - generic [ref=e1054]:
+                            - generic [ref=e1055]: Price, product page
+                            - 'link "₹1,18,999 M.R.P: ₹1,29,999 M.R.P: ₹1,29,999" [ref=e1056] [cursor=pointer]':
+                              - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DSKL9MQ8/ref=sr_1_10?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                              - generic [ref=e1057]:
+                                - generic [ref=e1058]: ₹1,18,999
+                                - generic [ref=e1059]: ₹1,18,999
+                              - generic [ref=e1060]: "M.R.P: ₹1,29,999"
+                              - generic [ref=e1061]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1062]:
+                                  - generic [ref=e1063]: ₹1,29,999
+                                  - text: ₹1,29,999
+                            - text: (8% off)
+                          - generic [ref=e1067]:
+                            - generic [ref=e1068]: Save extra with No Cost EMI
+                            - generic [ref=e1069]: Save extra with No Cost EMI
+                        - generic [ref=e1072]:
+                          - generic [ref=e1074]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e1076]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e1091] [cursor=pointer]
+                        - group "colours available" [ref=e1093]:
+                          - list [ref=e1094]:
+                            - generic [ref=e1095]:
+                              - listitem:
+                                - link "Titanium Whitesilver":
+                                  - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DSKL9MQ8/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                            - generic [ref=e1098]:
+                              - listitem:
+                                - link "Titanium Black":
+                                  - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DVC6VC7P/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                            - generic [ref=e1101]:
+                              - listitem:
+                                - link "Titanium Gray":
+                                  - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DVC8FPVJ/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                            - generic [ref=e1104]:
+                              - listitem:
+                                - link "Titanium Silverblue":
+                                  - /url: /Samsung-Smartphone-Whitesilver-Snapdragon-ProVisual/dp/B0DVC72DF8/ref=cs_sr_dp_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-10
+                - listitem [ref=e1109]:
+                  - generic [ref=e1115]:
+                    - link [ref=e1121] [cursor=pointer]:
+                      - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRN7L8Q/ref=sr_1_11?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                      - img [ref=e1123]
+                    - generic [ref=e1126]:
+                      - generic [ref=e1127]:
+                        - heading "OnePlus" [level=2] [ref=e1130]
+                        - link "15 | 12GB+256GB | Sand Storm | India's First Snapdragon® 8 Elite Gen 5 | 7300mAh Battery | Personalised AI | Game-Changing 165Hz Display | Triple 50MP Camera with 4K 120fps Dolby Vision" [ref=e1131] [cursor=pointer]:
+                          - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRN7L8Q/ref=sr_1_11?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                          - heading "15 | 12GB+256GB | Sand Storm | India's First Snapdragon® 8 Elite Gen 5 | 7300mAh Battery | Personalised AI | Game-Changing 165Hz Display | Triple 50MP Camera with 4K 120fps Dolby Vision" [level=2] [ref=e1132]
+                      - generic [ref=e1133]:
+                        - generic [ref=e1134]:
+                          - text: "4.6"
+                          - button "4.6 out of 5 stars, rating details" [ref=e1136] [cursor=pointer]:
+                            - generic [ref=e1138]: 4.6 out of 5 stars
+                          - link "1,564 ratings" [ref=e1140] [cursor=pointer]:
+                            - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRN7L8Q/ref=sr_1_11?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11#customerReviews
+                            - text: (1.5K)
+                        - generic [ref=e1141]: 300+ bought in past month
+                      - generic [ref=e1144]:
+                        - generic [ref=e1145]:
+                          - generic [ref=e1147]:
+                            - generic [ref=e1148]: Price, product page
+                            - 'link "₹85,999 M.R.P: ₹89,999 M.R.P: ₹89,999" [ref=e1149] [cursor=pointer]':
+                              - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRN7L8Q/ref=sr_1_11?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                              - generic [ref=e1150]:
+                                - generic [ref=e1151]: ₹85,999
+                                - generic [ref=e1152]: ₹85,999
+                              - generic [ref=e1153]: "M.R.P: ₹89,999"
+                              - generic [ref=e1154]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1155]:
+                                  - generic [ref=e1156]: ₹89,999
+                                  - text: ₹89,999
+                            - text: (4% off)
+                          - generic [ref=e1160]:
+                            - generic [ref=e1161]: Save extra with No Cost EMI
+                            - generic [ref=e1162]: Save extra with No Cost EMI
+                        - generic [ref=e1165]:
+                          - generic [ref=e1167]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e1169]: Or fastest delivery Tomorrow 8 am - 12 pm
+                        - button "Add to cart" [ref=e1184] [cursor=pointer]
+                        - group "colours available" [ref=e1186]:
+                          - list [ref=e1187]:
+                            - generic [ref=e1188]:
+                              - listitem:
+                                - link "Sand Storm":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRN7L8Q/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                            - generic [ref=e1191]:
+                              - listitem:
+                                - link "Infinite Black":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTR5NGHJ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                            - generic [ref=e1194]:
+                              - listitem:
+                                - link "Ultra Violet":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7300mAh-Personalised-Game-Changing/dp/B0FTRYH3XM/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-11
+                - listitem [ref=e1199]:
+                  - generic [ref=e1205]:
+                    - link [ref=e1211] [cursor=pointer]:
+                      - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1LXPZ/ref=sr_1_12?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                      - img [ref=e1213]
+                    - generic [ref=e1216]:
+                      - generic [ref=e1217]:
+                        - heading "OnePlus" [level=2] [ref=e1220]
+                        - link "15R | 12GB+256GB | Mint Breeze | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP66 IP68 IP69 & IP69K | 4K 120fps Video" [ref=e1221] [cursor=pointer]:
+                          - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1LXPZ/ref=sr_1_12?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                          - heading "15R | 12GB+256GB | Mint Breeze | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery | Personalised AI | Game-Changing 165Hz Display | IP66 IP68 IP69 & IP69K | 4K 120fps Video" [level=2] [ref=e1222]
+                      - generic [ref=e1223]:
+                        - generic [ref=e1224]:
+                          - text: "4.5"
+                          - button "4.5 out of 5 stars, rating details" [ref=e1226] [cursor=pointer]:
+                            - generic [ref=e1228]: 4.5 out of 5 stars
+                          - link "1,505 ratings" [ref=e1230] [cursor=pointer]:
+                            - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1LXPZ/ref=sr_1_12?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12#customerReviews
+                            - text: (1.5K)
+                        - generic [ref=e1231]: 1K+ bought in past month
+                      - generic [ref=e1234]:
+                        - generic [ref=e1235]:
+                          - generic [ref=e1237]:
+                            - generic [ref=e1238]: Price, product page
+                            - 'link "₹59,999 M.R.P: ₹61,999 M.R.P: ₹61,999" [ref=e1239] [cursor=pointer]':
+                              - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1LXPZ/ref=sr_1_12?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                              - generic [ref=e1240]:
+                                - generic [ref=e1241]: ₹59,999
+                                - generic [ref=e1242]: ₹59,999
+                              - generic [ref=e1243]: "M.R.P: ₹61,999"
+                              - generic [ref=e1244]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1245]:
+                                  - generic [ref=e1246]: ₹61,999
+                                  - text: ₹61,999
+                            - text: (3% off)
+                          - generic [ref=e1250]:
+                            - generic [ref=e1251]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1252]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1255]:
+                          - generic [ref=e1257]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e1259]: Or fastest delivery Tomorrow 6 am - 10 am
+                        - button "Add to cart" [ref=e1274] [cursor=pointer]
+                        - group "colours available" [ref=e1276]:
+                          - list [ref=e1277]:
+                            - generic [ref=e1278]:
+                              - listitem:
+                                - link "Mint Breeze":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1LXPZ/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                            - generic [ref=e1281]:
+                              - listitem:
+                                - link "Charcoal Black":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZSWZZW2/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                            - generic [ref=e1284]:
+                              - listitem:
+                                - link "Electric Violet":
+                                  - /url: /OnePlus-Snapdragon%C2%AE-7400mAh-Personalised-Game-Changing/dp/B0FZT1D63F/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-12
+                - listitem [ref=e1289]:
+                  - generic [ref=e1295]:
+                    - link [ref=e1301] [cursor=pointer]:
+                      - /url: /iPhone-Air-512-GB-AppleCare/dp/B0GTYZ4RW6/ref=sr_1_13?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-13
+                      - img [ref=e1303]
+                    - generic [ref=e1306]:
+                      - link "iPhone Air (512 GB) - Cloud White with Protect+ with AppleCare Services" [ref=e1308] [cursor=pointer]:
+                        - /url: /iPhone-Air-512-GB-AppleCare/dp/B0GTYZ4RW6/ref=sr_1_13?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-13
+                        - heading "iPhone Air (512 GB) - Cloud White with Protect+ with AppleCare Services" [level=2] [ref=e1309]
+                      - generic [ref=e1312]:
+                        - generic [ref=e1313]:
+                          - generic [ref=e1315]:
+                            - generic [ref=e1316]: Price, product page
+                            - 'link "₹1,38,899 List: ₹1,56,899 List: ₹1,56,899" [ref=e1317] [cursor=pointer]':
+                              - /url: /iPhone-Air-512-GB-AppleCare/dp/B0GTYZ4RW6/ref=sr_1_13?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-13
+                              - generic [ref=e1318]:
+                                - generic [ref=e1319]: ₹1,38,899
+                                - generic [ref=e1320]: ₹1,38,899
+                              - generic [ref=e1321]: "List: ₹1,56,899"
+                              - generic [ref=e1322]:
+                                - text: "List:"
+                                - generic [ref=e1323]:
+                                  - generic [ref=e1324]: ₹1,56,899
+                                  - text: ₹1,56,899
+                            - text: (11% off)
+                          - generic [ref=e1328]:
+                            - generic [ref=e1329]: Flat INR 750 Off on Select Bank Cards
+                            - generic [ref=e1330]: Flat INR 750 Off on Select Bank Cards
+                        - generic [ref=e1337]: Delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e1352] [cursor=pointer]
+                - listitem [ref=e1355]:
+                  - generic [ref=e1361]:
+                    - link [ref=e1367] [cursor=pointer]:
+                      - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB3FBBB/ref=sr_1_14?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                      - img [ref=e1369]
+                    - generic [ref=e1372]:
+                      - generic [ref=e1373]:
+                        - heading "OnePlus" [level=2] [ref=e1376]
+                        - link "Nord 6 | 8GB+256GB | Pitch Black | Snapdragon 8s Gen 4 | Segment's First Stable 165FPS Gaming | Segment's Largest 9000mAh Battery | Most Complete IP Rating | Personalized AI" [ref=e1377] [cursor=pointer]:
+                          - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB3FBBB/ref=sr_1_14?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                          - heading "Nord 6 | 8GB+256GB | Pitch Black | Snapdragon 8s Gen 4 | Segment's First Stable 165FPS Gaming | Segment's Largest 9000mAh Battery | Most Complete IP Rating | Personalized AI" [level=2] [ref=e1378]
+                      - generic [ref=e1379]:
+                        - generic [ref=e1380]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e1382] [cursor=pointer]:
+                            - generic [ref=e1384]: 4.3 out of 5 stars
+                          - link "2,106 ratings" [ref=e1386] [cursor=pointer]:
+                            - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB3FBBB/ref=sr_1_14?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14#customerReviews
+                            - text: (2.1K)
+                        - generic [ref=e1387]: 5K+ bought in past month
+                      - generic [ref=e1390]:
+                        - generic [ref=e1391]:
+                          - generic [ref=e1393]:
+                            - generic [ref=e1394]: Price, product page
+                            - 'link "₹44,999 M.R.P: ₹52,999 M.R.P: ₹52,999" [ref=e1395] [cursor=pointer]':
+                              - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB3FBBB/ref=sr_1_14?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                              - generic [ref=e1396]:
+                                - generic [ref=e1397]: ₹44,999
+                                - generic [ref=e1398]: ₹44,999
+                              - generic [ref=e1399]: "M.R.P: ₹52,999"
+                              - generic [ref=e1400]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1401]:
+                                  - generic [ref=e1402]: ₹52,999
+                                  - text: ₹52,999
+                            - text: (15% off)
+                          - generic [ref=e1406]:
+                            - generic [ref=e1407]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1408]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1411]:
+                          - generic [ref=e1413]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e1415]: Or fastest delivery Tomorrow 8 am - 12 pm
+                        - button "Add to cart" [ref=e1430] [cursor=pointer]
+                        - group "colours available" [ref=e1432]:
+                          - list [ref=e1433]:
+                            - generic [ref=e1434]:
+                              - listitem:
+                                - link "Pitch Black":
+                                  - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB3FBBB/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                            - generic [ref=e1437]:
+                              - listitem:
+                                - link "Fresh Mint":
+                                  - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRBBPBGQ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                            - generic [ref=e1440]:
+                              - listitem:
+                                - link "Quick Silver":
+                                  - /url: /OnePlus-Snapdragon-Segments-Complete-Personalized/dp/B0GRB5C1HW/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-14
+                - listitem [ref=e1445]:
+                  - generic [ref=e1451]:
+                    - link [ref=e1457] [cursor=pointer]:
+                      - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQDDRX8/ref=sr_1_15?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                      - img [ref=e1459]
+                    - generic [ref=e1462]:
+                      - generic [ref=e1463]:
+                        - heading "XIAOMI" [level=2] [ref=e1466]
+                        - link "17 (12GB/512GB)|50MP Leica Triple Camera|Snapdragon 8 Elite Gen 5|6.3\" CrystalRes 1-120Hz AMOLED|6330mAh Battery|100W HyperCharge HyperOS 3|3500nits Display (Green)" [ref=e1467] [cursor=pointer]:
+                          - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQDDRX8/ref=sr_1_15?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                          - heading "17 (12GB/512GB)|50MP Leica Triple Camera|Snapdragon 8 Elite Gen 5|6.3\" CrystalRes 1-120Hz AMOLED|6330mAh Battery|100W HyperCharge HyperOS 3|3500nits Display (Green)" [level=2] [ref=e1468]
+                      - generic [ref=e1470]:
+                        - text: "4.4"
+                        - button "4.4 out of 5 stars, rating details" [ref=e1472] [cursor=pointer]:
+                          - generic [ref=e1474]: 4.4 out of 5 stars
+                        - link "41 ratings" [ref=e1476] [cursor=pointer]:
+                          - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQDDRX8/ref=sr_1_15?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15#customerReviews
+                          - text: (41)
+                      - generic [ref=e1479]:
+                        - generic [ref=e1480]:
+                          - generic [ref=e1482]:
+                            - generic [ref=e1483]: Price, product page
+                            - 'link "₹89,999 M.R.P: ₹1,19,999 M.R.P: ₹1,19,999" [ref=e1484] [cursor=pointer]':
+                              - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQDDRX8/ref=sr_1_15?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                              - generic [ref=e1485]:
+                                - generic [ref=e1486]: ₹89,999
+                                - generic [ref=e1487]: ₹89,999
+                              - generic [ref=e1488]: "M.R.P: ₹1,19,999"
+                              - generic [ref=e1489]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1490]:
+                                  - generic [ref=e1491]: ₹1,19,999
+                                  - text: ₹1,19,999
+                            - text: (25% off)
+                          - generic [ref=e1495]:
+                            - generic [ref=e1496]: Save extra with No Cost EMI
+                            - generic [ref=e1497]: Save extra with No Cost EMI
+                        - generic [ref=e1500]:
+                          - generic [ref=e1502]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e1504]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e1519] [cursor=pointer]
+                        - group "colours available" [ref=e1521]:
+                          - list [ref=e1522]:
+                            - generic [ref=e1523]:
+                              - listitem:
+                                - link "Venture Green":
+                                  - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQDDRX8/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                            - generic [ref=e1526]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQWZ6ZM/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                            - generic [ref=e1529]:
+                              - listitem:
+                                - link "Ice Blue":
+                                  - /url: /XIAOMI-Snapdragon-CrystalRes-HyperCharge-3500nits/dp/B0GMQWN8NR/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-15
+                - listitem [ref=e1534]:
+                  - generic [ref=e1540]:
+                    - link [ref=e1546] [cursor=pointer]:
+                      - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GL85WGTZ/ref=sr_1_16?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                      - img [ref=e1548]
+                    - generic [ref=e1551]:
+                      - generic [ref=e1552]:
+                        - heading "Samsung" [level=2] [ref=e1555]
+                        - link "Galaxy S26 Ultra 5G (Sky Blue, 12GB RAM, 256GB Storage) with Built-in Privacy Display, AI Phone, Photo Assist, Creative Studio, 200MP Camera, 5000mAh Battery and Snapdragon 8 Elite Gen 5" [ref=e1556] [cursor=pointer]:
+                          - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GL85WGTZ/ref=sr_1_16?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                          - heading "Galaxy S26 Ultra 5G (Sky Blue, 12GB RAM, 256GB Storage) with Built-in Privacy Display, AI Phone, Photo Assist, Creative Studio, 200MP Camera, 5000mAh Battery and Snapdragon 8 Elite Gen 5" [level=2] [ref=e1557]
+                      - generic [ref=e1558]:
+                        - generic [ref=e1559]:
+                          - text: "4.6"
+                          - button "4.6 out of 5 stars, rating details" [ref=e1561] [cursor=pointer]:
+                            - generic [ref=e1563]: 4.6 out of 5 stars
+                          - link "157 ratings" [ref=e1565] [cursor=pointer]:
+                            - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GL85WGTZ/ref=sr_1_16?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16#customerReviews
+                            - text: (157)
+                        - generic [ref=e1566]: 50+ bought in past month
+                      - generic [ref=e1569]:
+                        - generic [ref=e1570]:
+                          - generic [ref=e1572]:
+                            - generic [ref=e1573]: Price, product page
+                            - link "₹1,39,999" [ref=e1574] [cursor=pointer]:
+                              - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GL85WGTZ/ref=sr_1_16?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                              - generic [ref=e1575]:
+                                - generic [ref=e1576]: ₹1,39,999
+                                - generic [ref=e1577]: ₹1,39,999
+                          - generic [ref=e1581]:
+                            - generic [ref=e1582]: Flat INR 5000 Off on HDFC BankCards
+                            - generic [ref=e1583]: Flat INR 5000 Off on HDFC BankCar...
+                        - generic [ref=e1586]:
+                          - generic [ref=e1588]: FREE delivery Fri, 24 Jul
+                          - generic [ref=e1590]: Or fastest delivery Tomorrow, 23 Jul
+                        - button "Add to cart" [ref=e1605] [cursor=pointer]
+                        - group "colours available" [ref=e1607]:
+                          - list [ref=e1608]:
+                            - generic [ref=e1609]:
+                              - listitem:
+                                - link "Sky Blue":
+                                  - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GL85WGTZ/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                            - generic [ref=e1612]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GLH1M7SK/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                            - generic [ref=e1615]:
+                              - listitem:
+                                - link "Cobalt Violet":
+                                  - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GLGVG814/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                            - generic [ref=e1618]:
+                              - listitem:
+                                - link "White":
+                                  - /url: /Samsung-Storage-Privacy-Creative-Snapdragon/dp/B0GLGYF3RD/ref=cs_sr_dp_4?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-16
+                - listitem [ref=e1623]:
+                  - generic [ref=e1629]:
+                    - link [ref=e1635] [cursor=pointer]:
+                      - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHVJRH/ref=sr_1_17?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                      - img [ref=e1637]
+                    - generic [ref=e1640]:
+                      - generic [ref=e1641]:
+                        - heading "OnePlus" [level=2] [ref=e1644]
+                        - link "Nord CE6 | 8GB+128GB | Pitch Black | Snapdragon 7s Gen 4 | Segment's Fastest Touch Response | 8000mAh Battery | 144Hz 1.5K AMOLED Display | 50MP Main + 32MP Selfie 4K Cameras | IP66,68,69,69K" [ref=e1645] [cursor=pointer]:
+                          - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHVJRH/ref=sr_1_17?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                          - heading "Nord CE6 | 8GB+128GB | Pitch Black | Snapdragon 7s Gen 4 | Segment's Fastest Touch Response | 8000mAh Battery | 144Hz 1.5K AMOLED Display | 50MP Main + 32MP Selfie 4K Cameras | IP66,68,69,69K" [level=2] [ref=e1646]
+                      - generic [ref=e1647]:
+                        - generic [ref=e1648]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=e1650] [cursor=pointer]:
+                            - generic [ref=e1652]: 4.3 out of 5 stars
+                          - link "1,726 ratings" [ref=e1654] [cursor=pointer]:
+                            - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHVJRH/ref=sr_1_17?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17#customerReviews
+                            - text: (1.7K)
+                        - generic [ref=e1655]: 5K+ bought in past month
+                      - generic [ref=e1658]:
+                        - generic [ref=e1659]:
+                          - generic [ref=e1661]:
+                            - generic [ref=e1662]: Price, product page
+                            - 'link "₹35,999 M.R.P: ₹40,999 M.R.P: ₹40,999" [ref=e1663] [cursor=pointer]':
+                              - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHVJRH/ref=sr_1_17?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                              - generic [ref=e1664]:
+                                - generic [ref=e1665]: ₹35,999
+                                - generic [ref=e1666]: ₹35,999
+                              - generic [ref=e1667]: "M.R.P: ₹40,999"
+                              - generic [ref=e1668]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1669]:
+                                  - generic [ref=e1670]: ₹40,999
+                                  - text: ₹40,999
+                            - text: (12% off)
+                          - generic [ref=e1674]:
+                            - generic [ref=e1675]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1676]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1679]:
+                          - generic [ref=e1681]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e1683]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e1698] [cursor=pointer]
+                        - group "colours available" [ref=e1700]:
+                          - list [ref=e1701]:
+                            - generic [ref=e1702]:
+                              - listitem:
+                                - link "Pitch Black":
+                                  - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHVJRH/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                            - generic [ref=e1705]:
+                              - listitem:
+                                - link "Fresh Blue":
+                                  - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLHWCLJ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                            - generic [ref=e1708]:
+                              - listitem:
+                                - link "Lunar Pearl":
+                                  - /url: /OnePlus-Snapdragon-Segments-Fastest-Response/dp/B0GWLTLNTV/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-17
+                - listitem [ref=e1713]:
+                  - generic [ref=e1719]:
+                    - link [ref=e1725] [cursor=pointer]:
+                      - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQG7QM5/ref=sr_1_18?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18
+                      - img [ref=e1727]
+                    - generic [ref=e1730]:
+                      - generic [ref=e1731]:
+                        - heading "XIAOMI" [level=2] [ref=e1734]
+                        - link "17 Ultra (Black, 16GB+512GB) |World's First Leica 1-Inch LOFIC Sensor |Snapdragon 8 Elite Gen 5 |2K AMOLED Display | 90W HyperCharge HyperOS 3 | HyperAI Flagship Experience" [ref=e1735] [cursor=pointer]:
+                          - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQG7QM5/ref=sr_1_18?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18
+                          - heading "17 Ultra (Black, 16GB+512GB) |World's First Leica 1-Inch LOFIC Sensor |Snapdragon 8 Elite Gen 5 |2K AMOLED Display | 90W HyperCharge HyperOS 3 | HyperAI Flagship Experience" [level=2] [ref=e1736]
+                      - generic [ref=e1738]:
+                        - text: "4.5"
+                        - button "4.5 out of 5 stars, rating details" [ref=e1740] [cursor=pointer]:
+                          - generic [ref=e1742]: 4.5 out of 5 stars
+                        - link "45 ratings" [ref=e1744] [cursor=pointer]:
+                          - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQG7QM5/ref=sr_1_18?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18#customerReviews
+                          - text: (45)
+                      - generic [ref=e1747]:
+                        - generic [ref=e1748]:
+                          - generic [ref=e1750]:
+                            - generic [ref=e1751]: Price, product page
+                            - 'link "₹1,39,999 M.R.P: ₹1,69,999 M.R.P: ₹1,69,999" [ref=e1752] [cursor=pointer]':
+                              - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQG7QM5/ref=sr_1_18?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18
+                              - generic [ref=e1753]:
+                                - generic [ref=e1754]: ₹1,39,999
+                                - generic [ref=e1755]: ₹1,39,999
+                              - generic [ref=e1756]: "M.R.P: ₹1,69,999"
+                              - generic [ref=e1757]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1758]:
+                                  - generic [ref=e1759]: ₹1,69,999
+                                  - text: ₹1,69,999
+                            - text: (18% off)
+                          - generic [ref=e1763]:
+                            - generic [ref=e1764]: Save extra with No Cost EMI
+                            - generic [ref=e1765]: Save extra with No Cost EMI
+                        - generic [ref=e1768]:
+                          - generic [ref=e1770]: FREE delivery Sat, 25 Jul
+                          - generic [ref=e1772]: Or fastest delivery Fri, 24 Jul
+                        - button "Add to cart" [ref=e1787] [cursor=pointer]
+                        - group "colours available" [ref=e1789]:
+                          - list [ref=e1790]:
+                            - generic [ref=e1791]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQG7QM5/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18
+                            - generic [ref=e1794]:
+                              - listitem:
+                                - link "White":
+                                  - /url: /XIAOMI-Snapdragon-HyperCharge-Flagship-Experience/dp/B0GMQMG91N/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.AZIANWtkA05W3C5XGBvWPNVScPH_525mLDsQXI0-f7F1kKwAsrraliaK48HWXqmZ5wju1uqxaY7jBY30Zody3hHqFVu11rp0rJjqdV9eMDMHW1shJooZV4QcJMmN_mFwrS2xCZlvxNhFtwfoVOUYqu83WqylIYRPB-loiwNtgdlvJ9KVLlJQacFqjICdWOVqYXOiNEol-ACDnfeO55wx2QagK2yVPuIkvVyYrlDb1zM.Zts3eqNp5CtjKhNlcxrSmGopeIPii4i5R4YS__nH_9o&dib_tag=se&keywords=iphone+air&qid=1784717158&sr=8-18
+          - generic [ref=e1804]:
+            - generic "Related searches in iphone air" [ref=e1805]:
+              - heading "Related searches" [level=2] [ref=e1808]
+            - list [ref=e1810]:
+              - generic [ref=e1811]:
+                - listitem [ref=e1812]:
+                  - link "iphone airpods" [ref=e1814] [cursor=pointer]:
+                    - /url: /s?k=iphone+airpods&ref=rsl_sug_0_0&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1819]: iphone airpods
+                - listitem [ref=e1820]:
+                  - link "iphone 14" [ref=e1822] [cursor=pointer]:
+                    - /url: /s?k=iphone+14&ref=rsl_sug_0_3&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1827]: iphone 14
+              - generic [ref=e1828]:
+                - listitem [ref=e1829]:
+                  - link "iphone 13" [ref=e1831] [cursor=pointer]:
+                    - /url: /s?k=iphone+13&ref=rsl_sug_0_1&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1836]: iphone 13
+                - listitem [ref=e1837]:
+                  - link "iphone 15" [ref=e1839] [cursor=pointer]:
+                    - /url: /s?k=iphone+15&ref=rsl_sug_0_4&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1844]: iphone 15
+              - generic [ref=e1845]:
+                - listitem [ref=e1846]:
+                  - link "ipad" [ref=e1848] [cursor=pointer]:
+                    - /url: /s?k=ipad&ref=rsl_sug_0_2&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1853]: ipad
+                - listitem [ref=e1854]:
+                  - link "ipad pro" [ref=e1856] [cursor=pointer]:
+                    - /url: /s?k=ipad+pro&ref=rsl_sug_0_5&pd_rd_w=RQK30&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=F79TTHQY7KFEKF1S3DPZ&pd_rd_wg=xSJSu&pd_rd_r=73e2d0fb-9380-4f41-b330-5937f744a5a1&qid=1784717158
+                    - generic [ref=e1861]: ipad pro
+          - navigation "pagination" [ref=e1864]:
+            - list [ref=e1866]:
+              - listitem [ref=e1867]:
+                - button "Previous" [disabled] [ref=e1869]:
+                  - img [ref=e1870]
+                  - text: Previous
+              - listitem [ref=e1872]:
+                - button "Page 1" [ref=e1874]: "1"
+              - listitem [ref=e1875]:
+                - button "Go to page 2" [ref=e1877] [cursor=pointer]: "2"
+              - listitem [ref=e1878]:
+                - button "Go to page 3" [ref=e1880] [cursor=pointer]: "3"
+              - button [disabled] [ref=e1881]:
+                - img [ref=e1882]: ...
+              - button "20" [disabled] [ref=e1884]
+              - listitem [ref=e1885]:
+                - button "Go to next page, page 2" [ref=e1887] [cursor=pointer]:
+                  - text: Next
+                  - img [ref=e1888]
+          - generic [ref=e1895]:
+            - heading "Need help?" [level=2] [ref=e1898]
+            - generic [ref=e1899]:
+              - link "Visit the help section" [ref=e1900] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201889520
+              - text: or
+              - link "contact us" [ref=e1901] [cursor=pointer]:
+                - /url: /gp/help/customer/contact-us
+        - link "Go back to filtering menu" [ref=e1902] [cursor=pointer]:
+          - /url: "#s-skipLinkTargetForFilterOptions"
+      - dialog "Filters" [ref=e1903]:
+        - generic [ref=e1904]:
+          - link "Skip to main search results" [ref=e1905] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=e1911]:
+            - group "Delivery Day" [ref=e1912]:
+              - heading "Delivery Day" [level=2] [ref=e1913]
+              - list "Delivery Day" [ref=e1914]:
+                - listitem [ref=e1915]:
+                  - link "Apply the filter Get It by Tomorrow to narrow results" [ref=e1917] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_90%3A6741118031&dc&qid=1784717158&rnid=6741116031&ref=sr_nr_p_90_1&ds=v1%3AajPxXDhaRvvoO%2B8EhOWQUHrWOXCob0U6TNvs%2F2sXlHk
+                    - checkbox [ref=e1920]
+                    - text: Get It by Tomorrow
+                - listitem [ref=e1922]:
+                  - link "Apply the filter Get It in 2 Days to narrow results" [ref=e1924] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_90%3A20912642031&dc&qid=1784717158&rnid=6741116031&ref=sr_nr_p_90_2&ds=v1%3A6UhFpAdyB4M97ddkf3oleeyQZFd5RTcy6grJLTaR%2FQE
+                    - checkbox [ref=e1927]
+                    - text: Get It in 2 Days
+              - heading "Eligible for Free Shipping" [level=2] [ref=e1929]
+              - list "Eligible for Free Shipping" [ref=e1930]:
+                - listitem [ref=e1931]:
+                  - link "Apply the filter Free Shipping to narrow results" [ref=e1933] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_free_shipping_eligible%3A205563695031&dc&qid=1784717158&rnid=205563694031&ref=sr_nr_p_n_free_shipping_eligible_1&ds=v1%3A4FfyJyq2qk5Q6B1ZIacI91HUsZZHHquf94sOrUdsXk8
+                    - checkbox [ref=e1936]
+                    - text: Free Shipping
+                    - generic [ref=e1938]: Get FREE Shipping on eligible orders shipped by Amazon
+            - group "Customer Review" [ref=e1939]:
+              - heading "Customer Review" [level=2] [ref=e1940]
+              - list "Customer Review" [ref=e1941]:
+                - listitem [ref=e1942]:
+                  - link "Apply the filter 4 Stars & Up to narrow results" [ref=e1945] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_72%3A1318476031&dc&qid=1784717158&rnid=1318475031&ref=sr_nr_p_72_1&ds=v1%3AYW1GaJfRDi2k%2BXcyS8g0fvQ%2BYup7szmP3PY04Xs2OD0
+                    - generic [ref=e1947]: 4 Stars
+                    - text: "& Up"
+            - group "Deals & Discounts" [ref=e1948]:
+              - heading "Deals & Discounts" [level=2] [ref=e1949]
+              - list "Deals & Discounts" [ref=e1950]:
+                - listitem [ref=e1951]:
+                  - link "All Discounts" [ref=e1953] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_deal_type%3A26921226031&dc&qid=1784717158&rnid=26921223031&ref=sr_nr_p_n_deal_type_1&ds=v1%3A2cLnz9YD%2Fy018QvBAGrPgP5yovKqmHMm8Eno9kAt5YA
+                - listitem [ref=e1954]:
+                  - link "Buy More, Save More" [ref=e1956] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_deal_type%3A210770213031&dc&qid=1784717158&rnid=26921223031&ref=sr_nr_p_n_deal_type_2&ds=v1%3A1vzwWAhzakN1Xb35fTTAmblwVyO2oPs6oYXT1WModQM
+                - listitem [ref=e1957]:
+                  - link "Coupons" [ref=e1959] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_deal_type%3A210770212031&dc&qid=1784717158&rnid=26921223031&ref=sr_nr_p_n_deal_type_3&ds=v1%3A3I9qI17qvnykOTTdxsFC5tlcH97uM80oPb%2Fnt22mv00
+                - listitem [ref=e1960]:
+                  - link "Today's Deals" [ref=e1962] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_deal_type%3A26921224031&dc&qid=1784717158&rnid=26921223031&ref=sr_nr_p_n_deal_type_4&ds=v1%3AX%2BHBLmw%2Bdh92TcP%2BrIBLq%2BLJLTahj%2BEgUr%2FvnA%2FoVTo
+            - group "Availability" [ref=e1963]:
+              - heading "Availability" [level=2] [ref=e1964]
+              - list "Availability" [ref=e1965]:
+                - listitem [ref=e1966]:
+                  - link "Apply the filter Include Out of Stock to narrow results" [ref=e1968] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_availability%3A1318485031&dc&qid=1784717158&rnid=1318483031&ref=sr_nr_p_n_availability_2&ds=v1%3AtiHREq3Y9VIvz8qeW%2Bw1eVGGo79J06%2BR7Iq8eKJoXn8
+                    - checkbox [ref=e1971]
+                    - text: Include Out of Stock
+            - group "Pay On Delivery" [ref=e1973]:
+              - heading "Pay On Delivery" [level=2] [ref=e1974]
+              - list "Pay On Delivery" [ref=e1975]:
+                - listitem [ref=e1976]:
+                  - link "Apply the filter Eligible for Pay On Delivery to narrow results" [ref=e1978] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_is_cod_eligible%3A4931671031&dc&qid=1784717158&rnid=4931670031&ref=sr_nr_p_n_is_cod_eligible_1&ds=v1%3AyqMiHPBOk%2FZ%2Bq0J97PbksDwkykv6A9CMembOqRFTCB8
+                    - checkbox [ref=e1981]
+                    - text: Eligible for Pay On Delivery
+            - group "Local Market" [ref=e1983]:
+              - heading "Local Market" [level=2] [ref=e1984]
+              - list "Local Market" [ref=e1985]:
+                - listitem [ref=e1986]:
+                  - link "Apply the filter Amazon Fresh to narrow results" [ref=e1988] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=p_n_alm_brand_id%3A17107035031&dc&qid=1784717158&rnid=17107034031&ref=sr_nr_p_n_alm_brand_id_1&ds=v1%3AgFgf6pkfWqNBqCHfwXmOPxFTaFeakiMetAk1JdonYNQ
+                    - checkbox [ref=e1991]
+                    - text: Amazon Fresh
+            - group "Category" [ref=e1993]:
+              - heading "Category" [level=2] [ref=e1994]
+              - list "Category" [ref=e1995]:
+                - listitem [ref=e1996]:
+                  - link "Baby" [ref=e1998] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A1571274031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_1&ds=v1%3AatBzImUpRGOORsCQH9vHUGrdpS30%2FUXXIRzzLMpuNuo
+                - list
+                - listitem [ref=e1999]:
+                  - link "Car & Motorbike" [ref=e2001] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A4772060031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_2&ds=v1%3AKkDdEWPAQFxQmafYDiCR6HX3GWXJ%2FbrBvCXtavkzumo
+                - list
+                - listitem [ref=e2002]:
+                  - link "Clothing & Accessories" [ref=e2004] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A1571271031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_3&ds=v1%3AjqaPzhJD8w3%2B8RWQWuIOToJf3vfRjOT5kPDZacnDitE
+                - list
+                - listitem [ref=e2005]:
+                  - link "Computers & Accessories" [ref=e2007] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A976392031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_4&ds=v1%3A323UlxodGbHVmpQGHzOIxJlOa%2BFs%2FbiRgWCXD3EAH5Y
+                - list
+                - listitem [ref=e2008]:
+                  - link "Electronics" [ref=e2010] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A976419031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_5&ds=v1%3AixNdlF5iIthgcqy3tk%2BeokHXV95jB2cgSmb%2BDZbKwao
+                - list
+                - listitem [ref=e2011]:
+                  - link "Fashion" [ref=e2013] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A6648217031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_6&ds=v1%3AJGX19bKAkQNQJLOPXFMghXaUj71cQvHzv8Mqd2%2F0jUg
+                - list
+                - listitem [ref=e2014]:
+                  - link "Home & Kitchen" [ref=e2016] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A976442031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_7&ds=v1%3ATiXW%2Bw03IFJ1ynEBJEoGy8VbVY27fj6VNHwlZtk0uxc
+                - list
+                - listitem [ref=e2017]:
+                  - link "Home Improvement" [ref=e2019] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A3704992031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_8&ds=v1%3AtzOsErQKzCW5xTThGDb3C5JcqqRsdshp%2Bzlpbr%2BQRvk
+                - list
+                - listitem [ref=e2020]:
+                  - link "Industrial & Scientific" [ref=e2022] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A5866078031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_9&ds=v1%3AQytZt40CkuNZQCCnXDBpOQz9aH3J4gltVnwo4E9AN1o
+                - list
+                - listitem [ref=e2023]:
+                  - link "Musical Instruments" [ref=e2025] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A3677697031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_10&ds=v1%3A%2BJhE%2BKy2pUc%2BmvFBWbWjZvF2UjItqiW01W0rn6ZTK6Q
+                - list
+                - listitem [ref=e2026]:
+                  - link "Office Products" [ref=e2028] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A2454172031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_11&ds=v1%3A6DM58%2FS8fc4j6aDN%2BX8Oji5hSqdNkYYmx%2FWioJdlMhM
+                - list
+                - listitem [ref=e2029]:
+                  - link "Pet Supplies" [ref=e2031] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A2454181031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_12&ds=v1%3Ag9%2FU0G4XSEw2umLg7LoVFS%2FRVHpHviZYUeSjQ7G7iZc
+                - list
+                - listitem [ref=e2032]:
+                  - link "Sports, Fitness & Outdoors" [ref=e2034] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A1984443031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_13&ds=v1%3AHXXVTt2H0DT5P36D%2BszCQpHKHPU0p7UxXPfd1hTmVXU
+                - list
+                - listitem [ref=e2035]:
+                  - link "Toys & Games" [ref=e2037] [cursor=pointer]:
+                    - /url: /s?k=iphone+air&rh=n%3A1350380031&dc&qid=1784717158&rnid=3576079031&ref=sr_nr_n_14&ds=v1%3AY8JqCStN97qJYQjMZdTRYQq8EaJOMK56zTvJpiqmK%2FE
+                - list
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=e2038]:
+    - button "Back to top" [ref=e2039] [cursor=pointer]:
+      - generic [ref=e2040]: Back to top
+    - generic [ref=e2041]:
+      - generic [ref=e2042]:
+        - heading "Get to Know Us" [level=6] [ref=e2043]
+        - list [ref=e2044]:
+          - listitem [ref=e2045]:
+            - link "About Amazon" [ref=e2046] [cursor=pointer]:
+              - /url: https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2047]:
+            - link "Careers" [ref=e2048] [cursor=pointer]:
+              - /url: https://amazon.jobs
+          - listitem [ref=e2049]:
+            - link "Press Releases" [ref=e2050] [cursor=pointer]:
+              - /url: https://press.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2051]:
+            - link "Amazon Science" [ref=e2052] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e2054]:
+        - heading "Connect with Us" [level=6] [ref=e2055]
+        - list [ref=e2056]:
+          - listitem [ref=e2057]:
+            - link "Facebook" [ref=e2058] [cursor=pointer]:
+              - /url: https://www.facebook.com/AmazonIN
+          - listitem [ref=e2059]:
+            - link "Twitter" [ref=e2060] [cursor=pointer]:
+              - /url: https://x.com/AmazonIN
+          - listitem [ref=e2061]:
+            - link "Instagram" [ref=e2062] [cursor=pointer]:
+              - /url: https://www.instagram.com/amazondotin
+      - generic [ref=e2064]:
+        - heading "Make Money with Us" [level=6] [ref=e2065]
+        - list [ref=e2066]:
+          - listitem [ref=e2067]:
+            - link "Sell on Amazon" [ref=e2068] [cursor=pointer]:
+              - /url: /b/?node=2838698031&ld=AZINSOANavDesktopFooter_C&ref_=nav_footer_sell_C
+          - listitem [ref=e2069]:
+            - link "Sell under Amazon Accelerator" [ref=e2070] [cursor=pointer]:
+              - /url: https://accelerator.amazon.in/?ref_=map_1_b2b_GW_FT
+          - listitem [ref=e2071]:
+            - link "Protect and Build Your Brand" [ref=e2072] [cursor=pointer]:
+              - /url: https://brandservices.amazon.in/?ref=AOINABRLGNRFOOT&ld=AOINABRLGNRFOOT
+          - listitem [ref=e2073]:
+            - link "Amazon Global Selling" [ref=e2074] [cursor=pointer]:
+              - /url: https://sell.amazon.in/grow-your-business/amazon-global-selling.html?ld=AZIN_Footer_V1&ref=AZIN_Footer_V1
+          - listitem [ref=e2075]:
+            - link "Supply to Amazon" [ref=e2076] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=en-IN
+          - listitem [ref=e2077]:
+            - link "Become an Affiliate" [ref=e2078] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&utm_medium=footer&utm_source=GW&ref_=footer_assoc
+          - listitem [ref=e2079]:
+            - link "Fulfilment by Amazon" [ref=e2080] [cursor=pointer]:
+              - /url: https://services.amazon.in/services/fulfilment-by-amazon/benefits.html/ref=az_footer_fba?ld=AWRGINFBAfooter
+          - listitem [ref=e2081]:
+            - link "Advertise Your Products" [ref=e2082] [cursor=pointer]:
+              - /url: https://advertising.amazon.in/?ref=Amz.in
+          - listitem [ref=e2083]:
+            - link "Amazon Pay on Merchants" [ref=e2084] [cursor=pointer]:
+              - /url: https://www.amazonpay.in/merchant
+      - generic [ref=e2086]:
+        - heading "Let Us Help You" [level=6] [ref=e2087]
+        - list [ref=e2088]:
+          - listitem [ref=e2089]:
+            - link "Your Account" [ref=e2090] [cursor=pointer]:
+              - /url: /gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=e2091]:
+            - link "Returns Centre" [ref=e2092] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e2093]:
+            - link "Recalls and Product Safety Alerts" [ref=e2094] [cursor=pointer]:
+              - /url: https://www.amazon.in/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e2095]:
+            - link "100% Purchase Protection" [ref=e2096] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201083470&ref_=footer_swc
+          - listitem [ref=e2097]:
+            - link "Amazon App Download" [ref=e2098] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6967393031&ref_=footer_mobapp
+          - listitem [ref=e2099]:
+            - link "Help" [ref=e2100] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he
+    - generic [ref=e2102]:
+      - link "Amazon India Home" [ref=e2105] [cursor=pointer]:
+        - /url: /ref=footer_logo
+      - generic [ref=e2108]:
+        - generic [ref=e2109]:
+          - link "Choose a language for shopping. Current selection is English." [ref=e2110] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e2112]: English
+          - button "Expand to Change Language or Country" [ref=e2113] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is India." [ref=e2114] [cursor=pointer]:
+          - generic [ref=e2116]: India
+    - generic "More on Amazon" [ref=e2117]:
+      - generic "More on Amazon" [ref=e2118]:
+        - list [ref=e2119]:
+          - listitem [ref=e2120]:
+            - link "AbeBooks Books, art & collectibles" [ref=e2121] [cursor=pointer]:
+              - /url: https://www.abebooks.com/
+              - heading "AbeBooks" [level=5] [ref=e2122]
+              - generic [ref=e2123]:
+                - text: Books, art
+                - text: "& collectibles"
+          - listitem [ref=e2124]
+          - listitem [ref=e2125]:
+            - link "Amazon Web Services Scalable Cloud Computing Services" [ref=e2126] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=IN_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e2127]
+              - generic [ref=e2128]:
+                - text: Scalable Cloud
+                - text: Computing Services
+          - listitem [ref=e2129]
+          - listitem [ref=e2130]:
+            - link "Audible Download Audio Books" [ref=e2131] [cursor=pointer]:
+              - /url: https://www.audible.in/
+              - heading "Audible" [level=5] [ref=e2132]
+              - generic [ref=e2133]:
+                - text: Download
+                - text: Audio Books
+          - listitem [ref=e2134]
+          - listitem [ref=e2135]:
+            - link "IMDb Movies, TV & Celebrities" [ref=e2136] [cursor=pointer]:
+              - /url: https://www.imdb.com/
+              - heading "IMDb" [level=5] [ref=e2137]
+              - generic [ref=e2138]:
+                - text: Movies, TV
+                - text: "& Celebrities"
+        - list [ref=e2139]:
+          - listitem [ref=e2140]:
+            - link "Shopbop Designer Fashion Brands" [ref=e2141] [cursor=pointer]:
+              - /url: https://www.shopbop.com/
+              - heading "Shopbop" [level=5] [ref=e2142]
+              - generic [ref=e2143]:
+                - text: Designer
+                - text: Fashion Brands
+          - listitem [ref=e2144]
+          - listitem [ref=e2145]:
+            - link "Amazon Business Everything For Your Business" [ref=e2146] [cursor=pointer]:
+              - /url: /business?ref=footer_aingw
+              - heading "Amazon Business" [level=5] [ref=e2147]
+              - generic [ref=e2148]:
+                - text: Everything For
+                - text: Your Business
+          - listitem [ref=e2149]
+          - listitem [ref=e2150]:
+            - link "Amazon Music Stream millions of songs" [ref=e2151] [cursor=pointer]:
+              - /url: /music/player?ref=footer_apm
+              - heading "Amazon Music" [level=5] [ref=e2152]
+              - generic [ref=e2153]: Stream millions of songs
+          - listitem [ref=e2154]
+          - listitem [ref=e2155]
+    - generic [ref=e2156]:
+      - list [ref=e2157]:
+        - listitem [ref=e2158]:
+          - link "Conditions of Use & Sale" [ref=e2159] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200545940&ref_=footer_cou
+        - listitem [ref=e2160]:
+          - link "Privacy Notice" [ref=e2161] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200534380&ref_=footer_privacy
+        - listitem [ref=e2162]:
+          - link "Interest-Based Ads" [ref=e2163] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=202075050&ref_=footer_iba
+      - generic [ref=e2164]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - iframe [ref=e2166]:
+    - iframe [ref=f2e2]:
+      - generic [active] [ref=f3e1]:
+        - img [ref=f3e2]
+        - img [ref=f3e3]
+        - img [ref=f3e4]
+        - img [ref=f3e5]
+        - img [ref=f3e6]
+        - img [ref=f3e7]
+        - img [ref=f3e8]
+        - img [ref=f3e9]
+        - img [ref=f3e10]
+        - img [ref=f3e11]
+        - img [ref=f3e12]
+        - img [ref=f3e13]
+        - img [ref=f3e14]
+        - img [ref=f3e15]
+        - img [ref=f3e16]
+        - img [ref=f3e17]
+        - img [ref=f3e18]
+        - img [ref=f3e19]
+        - img [ref=f3e20]
+        - img [ref=f3e21]
+        - img [ref=f3e22]
+        - img [ref=f3e23]
+        - img [ref=f3e24]
+        - img [ref=f3e25]
+        - img [ref=f3e26]
+        - img [ref=f3e27]
+        - img [ref=f3e28]
+        - img [ref=f3e29]
+        - img [ref=f3e30]
+        - img [ref=f3e31]
+        - img [ref=f3e32]
+        - img [ref=f3e33]
+        - img [ref=f3e34]
+        - img [ref=f3e35]
+        - img [ref=f3e36]
+        - img [ref=f3e37]
+        - img [ref=f3e38]
+        - img [ref=f3e39]
+        - img [ref=f3e40]
+```
